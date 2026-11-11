@@ -1,0 +1,2106 @@
+{
+  "abc": {
+    "name": "abc",
+    "file": "abc.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/abc.csv",
+    "legacyPath": "/data/abc.csv",
+    "title": "ملفات الأمثلة التعليمية",
+    "repositoryPath": "data/abc/abc.csv",
+    "readmePath": "data/abc/README.md",
+    "readme": "# ملفات الأمثلة التعليمية\n\n\n\nليس للملفين التاليين مصدر خارجي موثّق في مواد الدورة، لذلك لا ننسب إليهما بطاقة بيانات خارجية. الأوصاف هنا من درس القراءة والكتابة نفسه.\n\n### جدول الأعداد ABC\n\n**الوصف:** مثال لتعلّم قراءة الأعداد والضرب والحفظ.\n\n**وحدة البيانات والحجم:** صف من الأعداد؛ صفّان وثلاثة أعمدة: `a` و`b` و`c`.\n\n**التفاصيل:**\n\n- الأعداد من 1 إلى 6 ، مفصولة بفواصل، مع رأس للأعمدة.\n- لا يوجد مجتمع رصد أو وحدات قياس أو فترة أو مكان موثّق.\n- لا نعامل الأعداد بوصفها نتائج دراسة خارجية.\n\n**المصدر:** [درس القراءة والكتابة](/learn/ds-201-statistical-analysis/02-pandas/01-pandas-io). مثال تعليمي من مواد الدورة، بلا مصدر خارجي موثّق.\n\n\n\n### سرعة الكتابة WPM\n\n**الوصف:** مثال يربط سرعة الكتابة بوجود الإضاءة.\n\n**وحدة البيانات والحجم:** قياس مسجّل؛ 26 صفًا وعمودان. لا يوجد معرّف يثبت أنه شخص مختلف في كل صف.\n\n**التفاصيل:**\n\n- في `wpm`: كلمات في الدقيقة.\n- في `light`: وجود الإضاءة، بقيمتي True وFalse.\n- لا يوجد في مواد الدورة بروتوكول اختبار أو توزيع عشوائي للإضاءة أو بيانات مشاركين أو تاريخ ومكان.\n- لا ننسب الملف إلى تجربة منشورة.\n\n**المصدر:** [درس القراءة والكتابة](/learn/ds-201-statistical-analysis/02-pandas/01-pandas-io). مثال تعليمي من مواد الدورة، بلا مصدر خارجي موثّق.\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"abc\"))\n```\n\n## Download\n\n- [Download abc.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/abc.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 17,
+    "sha256": "c02c281077181afdec733aa0acf8053d01552845e4bb4a813287ae7f484b8c9c",
+    "columns": [
+      "a",
+      "b",
+      "c"
+    ],
+    "rowCount": 2,
+    "preview": [
+      [
+        "1",
+        "2",
+        "3"
+      ],
+      [
+        "4",
+        "5",
+        "6"
+      ]
+    ]
+  },
+  "adult": {
+    "name": "adult",
+    "file": "adult.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/adult.csv",
+    "legacyPath": "/data/adult.csv",
+    "title": "بيانات الدخل Adult",
+    "repositoryPath": "data/adult/adult.csv",
+    "readmePath": "data/adult/README.md",
+    "readme": "# بيانات الدخل Adult\n\n\n\n**الوصف:** تصنيف ما إذا كان دخل الفرد السنوي يتجاوز 50,000 دولار اعتمادًا على خصائص ديموغرافية واقتصادية.\n\n**وحدة البيانات والحجم:** سجل فرد؛ المجموعة الأصلية 48,842 سجلًا و 14 متغيرًا تفسيريًا؛ نسخة الدورة 32,561 صفًا و 15 عمودًا، وهي حجم مجموعة التدريب.\n\n**التفاصيل:**\n\n- استخراج من قاعدة تعداد 1994.\n- إيداعها في UCI سنة 1996 ليس تاريخ جمع الأفراد.\n- استخرجها Barry Becker، بشروط: `AAGE > 16`، و`AGI > 100`، و`AFNLWGT > 1`، و`HRSWK > 0`. توجد قيم مفقودة.\n- العمر، قطاع العمل، الوزن السكاني `fnlwgt`، التعليم ومستواه العددي، الحالة الزوجية، المهنة، العلاقة الأسرية، العرق، الجنس، مكاسب رأس المال وخسائره، ساعات العمل الأسبوعية وبلد الميلاد.\n- في `income`: ‏`<=50K` أو `>50K`.\n- في `native-country`: بلد الميلاد، فلا نقرأه بوصفه موقع المقابلة أو الإقامة.\n\n**المصدر:** [بطاقة Adult وشروط الاستخراج وقاموس المتغيرات](https://archive.ics.uci.edu/dataset/2/adult). حجم نسخة الدورة متحقق منه في الملف.\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"adult\"))\n```\n\n## Download\n\n- [Download adult.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/adult.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 3514344,
+    "sha256": "5138b5b5c98caed85f1d168fa268339cfe6e9d033c3957515ab3a00396877174",
+    "columns": [
+      "age",
+      "workclass",
+      "fnlwgt",
+      "education",
+      "education-num",
+      "marital-status",
+      "occupation",
+      "relationship",
+      "race",
+      "sex",
+      "capital-gain",
+      "capital-loss",
+      "hours-per-week",
+      "native-country",
+      "income"
+    ],
+    "rowCount": 32561,
+    "preview": [
+      [
+        "39",
+        "State-gov",
+        "77516",
+        "Bachelors",
+        "13",
+        "Never-married",
+        "Adm-clerical",
+        "Not-in-family",
+        "White",
+        "Male",
+        "2174",
+        "0",
+        "40",
+        "United-States",
+        "<=50K"
+      ],
+      [
+        "50",
+        "Self-emp-not-inc",
+        "83311",
+        "Bachelors",
+        "13",
+        "Married-civ-spouse",
+        "Exec-managerial",
+        "Husband",
+        "White",
+        "Male",
+        "0",
+        "0",
+        "13",
+        "United-States",
+        "<=50K"
+      ],
+      [
+        "38",
+        "Private",
+        "215646",
+        "HS-grad",
+        "9",
+        "Divorced",
+        "Handlers-cleaners",
+        "Not-in-family",
+        "White",
+        "Male",
+        "0",
+        "0",
+        "40",
+        "United-States",
+        "<=50K"
+      ],
+      [
+        "58",
+        "Private",
+        "151910",
+        "HS-grad",
+        "9",
+        "Widowed",
+        "Adm-clerical",
+        "Unmarried",
+        "White",
+        "Female",
+        "0",
+        "0",
+        "40",
+        "United-States",
+        "<=50K"
+      ],
+      [
+        "22",
+        "Private",
+        "201490",
+        "HS-grad",
+        "9",
+        "Never-married",
+        "Adm-clerical",
+        "Own-child",
+        "White",
+        "Male",
+        "0",
+        "0",
+        "20",
+        "United-States",
+        "<=50K"
+      ],
+      [
+        "52",
+        "Self-emp-inc",
+        "287927",
+        "HS-grad",
+        "9",
+        "Married-civ-spouse",
+        "Exec-managerial",
+        "Wife",
+        "White",
+        "Female",
+        "15024",
+        "0",
+        "40",
+        "United-States",
+        ">50K"
+      ]
+    ]
+  },
+  "auto-mpg/mpg": {
+    "name": "auto-mpg/mpg",
+    "file": "mpg.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/mpg.csv",
+    "legacyPath": "/data/mpg.csv",
+    "title": "بيانات استهلاك الوقود Auto MPG",
+    "repositoryPath": "data/auto-mpg/mpg.csv",
+    "readmePath": "data/auto-mpg/README.md",
+    "readme": "# بيانات استهلاك الوقود Auto MPG\n\n\n\n**الوصف:** دراسة استهلاك الوقود في دورة قيادة داخل المدينة، والتنبؤ بـ `mpg` من خصائص السيارة.\n\n**وحدة البيانات والحجم:** سجل سيارة؛ 398 صفًا و 9 أعمدة في `mpg.csv`. ملفا الدمج يحتويان 198 و 200 صف على الترتيب؛ في `cars1.csv` أيضًا خمسة أعمدة بلا أسماء.\n\n**التفاصيل:**\n\n- `mpg.csv` نسخة seaborn من Auto MPG؛ يستخدم تمرين الدمج الملفين `cars1.csv` و`cars2.csv` بأعمدة السيارات نفسها. هذه ليست مجموعة `mpg` المختلفة التي توزّعها ggplot2.\n- سنوات الطراز 1970–1982 في الملف.\n- `origin` يميز الولايات المتحدة وأوروبا واليابان، ولا يحدد مكان اختبار السيارة.\n- في `mpg`: كفاءة الوقود بالميل لكل غالون.\n- في `cylinders`: الأسطوانات.\n- في `displacement`: إزاحة المحرك.\n- في `horsepower`: القدرة.\n- في `weight`: الوزن.\n- في `acceleration`: متغير التسارع.\n- في `model_year`: سنة الطراز.\n- في `origin`: المنشأ.\n- في `name`: الاسم.\n- انتقلت المجموعة من مكتبة StatLib بجامعة Carnegie Mellon.\n- استُبعدت 8 حالات لا تتوفر لها قيمة `mpg`. توجد قيم مفقودة للقدرة.\n- بطاقة UCI لا تفصّل أجهزة القياس أو بروتوكول دورة القيادة أو وحدات جميع الحقول.\n- لا نفترض أن `acceleration` له تعريف متغير التسارع في بيانات السيارات الهجينة.\n\n**المصدر:** [بطاقة Auto MPG ومعلومات إعدادها](https://archive.ics.uci.edu/dataset/9/auto+mpg). سنوات الطراز وتوزيع ملفات الدمج متحقق منها في ملفات الدورة.\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"auto-mpg/mpg\"))\ndata = pd.read_csv(academy.get_data_url(\"auto-mpg/cars1\"))\ndata = pd.read_csv(academy.get_data_url(\"auto-mpg/cars2\"))\n```\n\n## Download\n\n- [Download mpg.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/mpg.csv)\n- [Download cars1.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/cars1.csv)\n- [Download cars2.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/cars2.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 21222,
+    "sha256": "c14b8b855ea7ee86cb9736bf8caaf281c4685ca08826f3eb2acaccaaf40f0d5a",
+    "columns": [
+      "mpg",
+      "cylinders",
+      "displacement",
+      "horsepower",
+      "weight",
+      "acceleration",
+      "model_year",
+      "origin",
+      "name"
+    ],
+    "rowCount": 398,
+    "preview": [
+      [
+        "18.0",
+        "8",
+        "307.0",
+        "130.0",
+        "3504",
+        "12.0",
+        "70",
+        "usa",
+        "chevrolet chevelle malibu"
+      ],
+      [
+        "15.0",
+        "8",
+        "350.0",
+        "165.0",
+        "3693",
+        "11.5",
+        "70",
+        "usa",
+        "buick skylark 320"
+      ],
+      [
+        "18.0",
+        "8",
+        "318.0",
+        "150.0",
+        "3436",
+        "11.0",
+        "70",
+        "usa",
+        "plymouth satellite"
+      ],
+      [
+        "32.0",
+        "4",
+        "135.0",
+        "84.0",
+        "2295",
+        "11.6",
+        "82",
+        "usa",
+        "dodge rampage"
+      ],
+      [
+        "28.0",
+        "4",
+        "120.0",
+        "79.0",
+        "2625",
+        "18.6",
+        "82",
+        "usa",
+        "ford ranger"
+      ],
+      [
+        "31.0",
+        "4",
+        "119.0",
+        "82.0",
+        "2720",
+        "19.4",
+        "82",
+        "usa",
+        "chevy s-10"
+      ]
+    ]
+  },
+  "auto-mpg/cars1": {
+    "name": "auto-mpg/cars1",
+    "file": "cars1.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/exercises/04/02_merge/cars1.csv",
+    "legacyPath": "/notebook/exercises/04/02_merge/cars1.csv",
+    "title": "بيانات استهلاك الوقود Auto MPG",
+    "repositoryPath": "data/auto-mpg/cars1.csv",
+    "readmePath": "data/auto-mpg/README.md",
+    "readme": "# بيانات استهلاك الوقود Auto MPG\n\n\n\n**الوصف:** دراسة استهلاك الوقود في دورة قيادة داخل المدينة، والتنبؤ بـ `mpg` من خصائص السيارة.\n\n**وحدة البيانات والحجم:** سجل سيارة؛ 398 صفًا و 9 أعمدة في `mpg.csv`. ملفا الدمج يحتويان 198 و 200 صف على الترتيب؛ في `cars1.csv` أيضًا خمسة أعمدة بلا أسماء.\n\n**التفاصيل:**\n\n- `mpg.csv` نسخة seaborn من Auto MPG؛ يستخدم تمرين الدمج الملفين `cars1.csv` و`cars2.csv` بأعمدة السيارات نفسها. هذه ليست مجموعة `mpg` المختلفة التي توزّعها ggplot2.\n- سنوات الطراز 1970–1982 في الملف.\n- `origin` يميز الولايات المتحدة وأوروبا واليابان، ولا يحدد مكان اختبار السيارة.\n- في `mpg`: كفاءة الوقود بالميل لكل غالون.\n- في `cylinders`: الأسطوانات.\n- في `displacement`: إزاحة المحرك.\n- في `horsepower`: القدرة.\n- في `weight`: الوزن.\n- في `acceleration`: متغير التسارع.\n- في `model_year`: سنة الطراز.\n- في `origin`: المنشأ.\n- في `name`: الاسم.\n- انتقلت المجموعة من مكتبة StatLib بجامعة Carnegie Mellon.\n- استُبعدت 8 حالات لا تتوفر لها قيمة `mpg`. توجد قيم مفقودة للقدرة.\n- بطاقة UCI لا تفصّل أجهزة القياس أو بروتوكول دورة القيادة أو وحدات جميع الحقول.\n- لا نفترض أن `acceleration` له تعريف متغير التسارع في بيانات السيارات الهجينة.\n\n**المصدر:** [بطاقة Auto MPG ومعلومات إعدادها](https://archive.ics.uci.edu/dataset/9/auto+mpg). سنوات الطراز وتوزيع ملفات الدمج متحقق منها في ملفات الدورة.\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"auto-mpg/mpg\"))\ndata = pd.read_csv(academy.get_data_url(\"auto-mpg/cars1\"))\ndata = pd.read_csv(academy.get_data_url(\"auto-mpg/cars2\"))\n```\n\n## Download\n\n- [Download mpg.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/mpg.csv)\n- [Download cars1.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/cars1.csv)\n- [Download cars2.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/cars2.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 10163,
+    "sha256": "0e07d62caae31b2cb4cc2fe5bf2e2f1934bee0bbc0986790b6c13b6b383948b4",
+    "columns": [
+      "mpg",
+      "cylinders",
+      "displacement",
+      "horsepower",
+      "weight",
+      "acceleration",
+      "model",
+      "origin",
+      "car",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "rowCount": 198,
+    "preview": [
+      [
+        "18.0",
+        "8",
+        "307",
+        "130",
+        "3504",
+        "12.0",
+        "70",
+        "1",
+        "chevrolet chevelle malibu",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "15.0",
+        "8",
+        "350",
+        "165",
+        "3693",
+        "11.5",
+        "70",
+        "1",
+        "buick skylark 320",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "18.0",
+        "8",
+        "318",
+        "150",
+        "3436",
+        "11.0",
+        "70",
+        "1",
+        "plymouth satellite",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "29.0",
+        "4",
+        "85",
+        "52",
+        "2035",
+        "22.2",
+        "76",
+        "1",
+        "chevrolet chevette",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "24.5",
+        "4",
+        "98",
+        "60",
+        "2164",
+        "22.1",
+        "76",
+        "1",
+        "chevrolet woody",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "29.0",
+        "4",
+        "90",
+        "70",
+        "1937",
+        "14.2",
+        "76",
+        "2",
+        "vw rabbit",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  "auto-mpg/cars2": {
+    "name": "auto-mpg/cars2",
+    "file": "cars2.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/exercises/04/02_merge/cars2.csv",
+    "legacyPath": "/notebook/exercises/04/02_merge/cars2.csv",
+    "title": "بيانات استهلاك الوقود Auto MPG",
+    "repositoryPath": "data/auto-mpg/cars2.csv",
+    "readmePath": "data/auto-mpg/README.md",
+    "readme": "# بيانات استهلاك الوقود Auto MPG\n\n\n\n**الوصف:** دراسة استهلاك الوقود في دورة قيادة داخل المدينة، والتنبؤ بـ `mpg` من خصائص السيارة.\n\n**وحدة البيانات والحجم:** سجل سيارة؛ 398 صفًا و 9 أعمدة في `mpg.csv`. ملفا الدمج يحتويان 198 و 200 صف على الترتيب؛ في `cars1.csv` أيضًا خمسة أعمدة بلا أسماء.\n\n**التفاصيل:**\n\n- `mpg.csv` نسخة seaborn من Auto MPG؛ يستخدم تمرين الدمج الملفين `cars1.csv` و`cars2.csv` بأعمدة السيارات نفسها. هذه ليست مجموعة `mpg` المختلفة التي توزّعها ggplot2.\n- سنوات الطراز 1970–1982 في الملف.\n- `origin` يميز الولايات المتحدة وأوروبا واليابان، ولا يحدد مكان اختبار السيارة.\n- في `mpg`: كفاءة الوقود بالميل لكل غالون.\n- في `cylinders`: الأسطوانات.\n- في `displacement`: إزاحة المحرك.\n- في `horsepower`: القدرة.\n- في `weight`: الوزن.\n- في `acceleration`: متغير التسارع.\n- في `model_year`: سنة الطراز.\n- في `origin`: المنشأ.\n- في `name`: الاسم.\n- انتقلت المجموعة من مكتبة StatLib بجامعة Carnegie Mellon.\n- استُبعدت 8 حالات لا تتوفر لها قيمة `mpg`. توجد قيم مفقودة للقدرة.\n- بطاقة UCI لا تفصّل أجهزة القياس أو بروتوكول دورة القيادة أو وحدات جميع الحقول.\n- لا نفترض أن `acceleration` له تعريف متغير التسارع في بيانات السيارات الهجينة.\n\n**المصدر:** [بطاقة Auto MPG ومعلومات إعدادها](https://archive.ics.uci.edu/dataset/9/auto+mpg). سنوات الطراز وتوزيع ملفات الدمج متحقق منها في ملفات الدورة.\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"auto-mpg/mpg\"))\ndata = pd.read_csv(academy.get_data_url(\"auto-mpg/cars1\"))\ndata = pd.read_csv(academy.get_data_url(\"auto-mpg/cars2\"))\n```\n\n## Download\n\n- [Download mpg.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/mpg.csv)\n- [Download cars1.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/cars1.csv)\n- [Download cars2.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/cars2.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 9383,
+    "sha256": "3ff6a48aedbca975ae87c4399aef695d9e02f0be6e74dae00839b53d37eee84c",
+    "columns": [
+      "mpg",
+      "cylinders",
+      "displacement",
+      "horsepower",
+      "weight",
+      "acceleration",
+      "model",
+      "origin",
+      "car"
+    ],
+    "rowCount": 200,
+    "preview": [
+      [
+        "33.0",
+        "4",
+        "91",
+        "53",
+        "1795",
+        "17.4",
+        "76",
+        "3",
+        "honda civic"
+      ],
+      [
+        "20.0",
+        "6",
+        "225",
+        "100",
+        "3651",
+        "17.7",
+        "76",
+        "1",
+        "dodge aspen se"
+      ],
+      [
+        "18.0",
+        "6",
+        "250",
+        "78",
+        "3574",
+        "21.0",
+        "76",
+        "1",
+        "ford granada ghia"
+      ],
+      [
+        "32.0",
+        "4",
+        "135",
+        "84",
+        "2295",
+        "11.6",
+        "82",
+        "1",
+        "dodge rampage"
+      ],
+      [
+        "28.0",
+        "4",
+        "120",
+        "79",
+        "2625",
+        "18.6",
+        "82",
+        "1",
+        "ford ranger"
+      ],
+      [
+        "31.0",
+        "4",
+        "119",
+        "82",
+        "2720",
+        "19.4",
+        "82",
+        "1",
+        "chevy s-10"
+      ]
+    ]
+  },
+  "bay-area-bikeshare/stations": {
+    "name": "bay-area-bikeshare/stations",
+    "file": "station.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/bay_area_bikeshare/station.csv",
+    "legacyPath": "/data/bay_area_bikeshare/station.csv",
+    "title": "بيانات رحلات الدراجات Bay Area Bike Share",
+    "repositoryPath": "data/bay-area-bikeshare/station.csv",
+    "readmePath": "data/bay-area-bikeshare/README.md",
+    "readme": "# بيانات رحلات الدراجات Bay Area Bike Share\n\n\n\n**الوصف:** سجلات تشغيل خدمة مشاركة الدراجات، لدراسة الاستخدام والمدة وحركة الرحلات بين المحطات.\n\n**وحدة البيانات والحجم:** `trip.csv`: رحلة، 354,152 صفًا و 11 عمودًا؛ `station.csv`: محطة، 70 صفًا و 7 أعمدة. عدد الرحلات ليس عدد راكبين مختلفين.\n\n**التفاصيل:**\n\n- ملفا الدورة نسخة تاريخية للفترة 2014–2015 ، يصفها مرجع الكتاب المرتبط أدناه.\n- بدايات الرحلات في الملف من 1 سبتمبر 2014 إلى 31 أغسطس 2015.\n- محطات في San Francisco وSan Jose وMountain View وPalo Alto وRedwood City.\n- المعرّف، المدة بالثواني، وقتا البداية والنهاية، اسما المحطتين ورمزاهما، رقم الدراجة، نوع الاشتراك والرمز البريدي.\n- المعرّف والاسم، خطا العرض والطول، عدد مواضع الإرساء، المدينة `landmark`، وتاريخ التركيب `installation`.\n- سجلات تأجير نشرها المشغّل.\n- توثيق الكتاب يطابق عدد رحلات النسخة وفترتها. لا يشرح الكتاب أجهزة تسجيل العمليات أو كل قواعد استبعاد الرحلات.\n\n**المصدر:** [توثيق النسخة التاريخية في كتاب Berkeley](https://inferentialthinking.com/chapters/08/5/bike-sharing-in-the-bay-area/index.html)، و[صفحة المشغّل الحالية](https://lyftbikes.com/system-data). مواقع المحطات وحدود التواريخ الدقيقة من الملفين.\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"bay-area-bikeshare/stations\"))\ndata = pd.read_csv(academy.get_data_url(\"bay-area-bikeshare/trips\"))\n```\n\n## Download\n\n- [Download station.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/station.csv)\n- [Download trip.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/trip.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 5272,
+    "sha256": "5700dd035e2b55ec0b3e4f9d3695a3a1e15c3dc8fb2d2115277b2c8bbc733e1c",
+    "columns": [
+      "station_id",
+      "name",
+      "lat",
+      "long",
+      "dockcount",
+      "landmark",
+      "installation"
+    ],
+    "rowCount": 70,
+    "preview": [
+      [
+        "2",
+        "San Jose Diridon Caltrain Station",
+        "37.329732",
+        "-121.901782",
+        "27",
+        "San Jose",
+        "8/6/2013"
+      ],
+      [
+        "3",
+        "San Jose Civic Center",
+        "37.330698",
+        "-121.888979",
+        "15",
+        "San Jose",
+        "8/5/2013"
+      ],
+      [
+        "4",
+        "Santa Clara at Almaden",
+        "37.333988",
+        "-121.894902",
+        "11",
+        "San Jose",
+        "8/6/2013"
+      ],
+      [
+        "82",
+        "Broadway St at Battery St",
+        "37.798541",
+        "-122.400862",
+        "15",
+        "San Francisco",
+        "1/22/2014"
+      ],
+      [
+        "83",
+        "Mezes Park",
+        "37.491269",
+        "-122.236234",
+        "15",
+        "Redwood City",
+        "2/20/2014"
+      ],
+      [
+        "84",
+        "Ryland Park",
+        "37.342725",
+        "-121.895617",
+        "15",
+        "San Jose",
+        "4/9/2014"
+      ]
+    ]
+  },
+  "bay-area-bikeshare/trips": {
+    "name": "bay-area-bikeshare/trips",
+    "file": "trip.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/bay_area_bikeshare/trip.csv",
+    "legacyPath": "/data/bay_area_bikeshare/trip.csv",
+    "title": "بيانات رحلات الدراجات Bay Area Bike Share",
+    "repositoryPath": "data/bay-area-bikeshare/trip.csv",
+    "readmePath": "data/bay-area-bikeshare/README.md",
+    "readme": "# بيانات رحلات الدراجات Bay Area Bike Share\n\n\n\n**الوصف:** سجلات تشغيل خدمة مشاركة الدراجات، لدراسة الاستخدام والمدة وحركة الرحلات بين المحطات.\n\n**وحدة البيانات والحجم:** `trip.csv`: رحلة، 354,152 صفًا و 11 عمودًا؛ `station.csv`: محطة، 70 صفًا و 7 أعمدة. عدد الرحلات ليس عدد راكبين مختلفين.\n\n**التفاصيل:**\n\n- ملفا الدورة نسخة تاريخية للفترة 2014–2015 ، يصفها مرجع الكتاب المرتبط أدناه.\n- بدايات الرحلات في الملف من 1 سبتمبر 2014 إلى 31 أغسطس 2015.\n- محطات في San Francisco وSan Jose وMountain View وPalo Alto وRedwood City.\n- المعرّف، المدة بالثواني، وقتا البداية والنهاية، اسما المحطتين ورمزاهما، رقم الدراجة، نوع الاشتراك والرمز البريدي.\n- المعرّف والاسم، خطا العرض والطول، عدد مواضع الإرساء، المدينة `landmark`، وتاريخ التركيب `installation`.\n- سجلات تأجير نشرها المشغّل.\n- توثيق الكتاب يطابق عدد رحلات النسخة وفترتها. لا يشرح الكتاب أجهزة تسجيل العمليات أو كل قواعد استبعاد الرحلات.\n\n**المصدر:** [توثيق النسخة التاريخية في كتاب Berkeley](https://inferentialthinking.com/chapters/08/5/bike-sharing-in-the-bay-area/index.html)، و[صفحة المشغّل الحالية](https://lyftbikes.com/system-data). مواقع المحطات وحدود التواريخ الدقيقة من الملفين.\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"bay-area-bikeshare/stations\"))\ndata = pd.read_csv(academy.get_data_url(\"bay-area-bikeshare/trips\"))\n```\n\n## Download\n\n- [Download station.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/station.csv)\n- [Download trip.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/trip.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 43012650,
+    "sha256": "ad201955d568232620b38a2c0dffd6f8b7ba05afde4651ad101369cb643be6ce",
+    "columns": [
+      "Trip ID",
+      "Duration",
+      "Start Date",
+      "Start Station",
+      "Start Terminal",
+      "End Date",
+      "End Station",
+      "End Terminal",
+      "Bike #",
+      "Subscriber Type",
+      "Zip Code"
+    ],
+    "rowCount": 354152,
+    "preview": [
+      [
+        "913460",
+        "765",
+        "8/31/2015 23:26",
+        "Harry Bridges Plaza (Ferry Building)",
+        "50",
+        "8/31/2015 23:39",
+        "San Francisco Caltrain (Townsend at 4th)",
+        "70",
+        "288",
+        "Subscriber",
+        "2139"
+      ],
+      [
+        "913459",
+        "1036",
+        "8/31/2015 23:11",
+        "San Antonio Shopping Center",
+        "31",
+        "8/31/2015 23:28",
+        "Mountain View City Hall",
+        "27",
+        "35",
+        "Subscriber",
+        "95032"
+      ],
+      [
+        "913455",
+        "307",
+        "8/31/2015 23:13",
+        "Post at Kearny",
+        "47",
+        "8/31/2015 23:18",
+        "2nd at South Park",
+        "64",
+        "468",
+        "Subscriber",
+        "94107"
+      ],
+      [
+        "432949",
+        "538",
+        "9/1/2014 0:05",
+        "South Van Ness at Market",
+        "66",
+        "9/1/2014 0:14",
+        "5th at Howard",
+        "57",
+        "466",
+        "Customer",
+        "32"
+      ],
+      [
+        "432948",
+        "568",
+        "9/1/2014 0:05",
+        "South Van Ness at Market",
+        "66",
+        "9/1/2014 0:15",
+        "5th at Howard",
+        "57",
+        "461",
+        "Customer",
+        "32"
+      ],
+      [
+        "432947",
+        "569",
+        "9/1/2014 0:05",
+        "South Van Ness at Market",
+        "66",
+        "9/1/2014 0:15",
+        "5th at Howard",
+        "57",
+        "318",
+        "Customer",
+        "32"
+      ]
+    ]
+  },
+  "chipotle": {
+    "name": "chipotle",
+    "file": "chipotle.tsv",
+    "delimiter": "\t",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/chipotle.tsv",
+    "legacyPath": "/data/chipotle.tsv",
+    "title": "بيانات طلبات المطعم Chipotle",
+    "repositoryPath": "data/chipotle/chipotle.tsv",
+    "readmePath": "data/chipotle/README.md",
+    "readme": "# بيانات طلبات المطعم Chipotle\n\n\n\n**الوصف:** بيانات مقال The Upshot عن الأصناف التي يطلبها زبائن Chipotle فعليًا.\n\n**وحدة البيانات والحجم:** بند في طلب؛ 4,622 صفًا و 5 أعمدة، تمثّل 1,834 معرّف طلب مختلفًا. قد يضم الطلب عدة بنود، وقد تزيد كمية البند على واحد.\n\n**التفاصيل:**\n\n- حُفظت نسخة الدورة من مستودع Kevin Markham؛ يربط مستودعه بمصدر The Upshot الأصلي.\n- في `order_id`: معرّف الطلب.\n- في `quantity`: الكمية.\n- في `item_name`: الصنف.\n- في `choice_description`: الاختيارات والإضافات.\n- في `item_price`: السعر المسجّل للبند.\n- نص مفصول بعلامة الجدولة.\n- السعر مخزّن مع علامة الدولار، والاختيارات نصوص وليست أعمدة مستقلة لكل إضافة.\n- المقال مؤرخ في 17 فبراير 2015 ، لكن ملف البيانات لا يحتوي تواريخ طلبات أو مواقع فروع. README لا يشرح آلية الحصول على الطلبات أو اختيارها.\n- تاريخ المقال ليس فترة الرصد.\n\n**المصدر:** [مستودع The Upshot](https://github.com/TheUpshot/chipotle)، و[المقال المرتبط به](https://www.nytimes.com/interactive/2015/02/17/upshot/what-do-people-actually-order-at-chipotle.html).\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"chipotle\"), sep='\\t')\n```\n\n## Download\n\n- [Download chipotle.tsv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/chipotle.tsv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 364975,
+    "sha256": "75ddc959e732e2fcfab9e689cdaada32bbe64296f1857c4aa7ee5a54abb6b1d3",
+    "columns": [
+      "order_id",
+      "quantity",
+      "item_name",
+      "choice_description",
+      "item_price"
+    ],
+    "rowCount": 4622,
+    "preview": [
+      [
+        "1",
+        "1",
+        "Chips and Fresh Tomato Salsa",
+        "NULL",
+        "$2.39 "
+      ],
+      [
+        "1",
+        "1",
+        "Izze",
+        "[Clementine]",
+        "$3.39 "
+      ],
+      [
+        "1",
+        "1",
+        "Nantucket Nectar",
+        "[Apple]",
+        "$3.39 "
+      ],
+      [
+        "1834",
+        "1",
+        "Chicken Salad Bowl",
+        "[Fresh Tomato Salsa, [Fajita Vegetables, Pinto Beans, Guacamole, Lettuce]]",
+        "$11.25 "
+      ],
+      [
+        "1834",
+        "1",
+        "Chicken Salad Bowl",
+        "[Fresh Tomato Salsa, [Fajita Vegetables, Lettuce]]",
+        "$8.75 "
+      ],
+      [
+        "1834",
+        "1",
+        "Chicken Salad Bowl",
+        "[Fresh Tomato Salsa, [Fajita Vegetables, Pinto Beans, Lettuce]]",
+        "$8.75 "
+      ]
+    ]
+  },
+  "diamonds": {
+    "name": "diamonds",
+    "file": "diamonds.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/diamonds.csv",
+    "legacyPath": "/data/diamonds.csv",
+    "title": "بيانات الألماس Diamonds",
+    "repositoryPath": "data/diamonds/diamonds.csv",
+    "readmePath": "data/diamonds/README.md",
+    "readme": "# بيانات الألماس Diamonds\n\n\n\n**الوصف:** وصف أسعار ألماس ذي قطع دائري وخصائصه، ودراسة علاقتها بالسعر.\n\n**وحدة البيانات والحجم:** سجل ألماسة؛ 53,940 صفًا و 10 أعمدة.\n\n**التفاصيل:**\n\n- في `price`: السعر بالدولار الأمريكي.\n- في `carat`: الكتلة بالقيراط.\n- في `cut`: جودة القطع من Fair إلى Ideal.\n- في `color`: اللون من D الأفضل إلى J الأسوأ.\n- في `clarity`: درجة النقاء من I1 إلى IF.\n- في `x` و`y` و`z`: الطول والعرض والعمق بالملليمتر.\n- في `depth`: نسبة العمق الكلي.\n- في `table`: عرض السطح العلوي نسبةً إلى أوسع جزء.\n- توثيق ggplot2 يعرّف المتغيرات ونطاقاتها، لكنه لا يبيّن في هذه الصفحة متجر الجمع أو تاريخه أو أجهزة القياس أو ما إذا كان السعر سعر عرض أم بيع فعلي.\n- نطاقات التوثيق تتضمن أبعادًا تساوي صفرًا.\n- وجود قيمة في الملف لا يجعلها قياسًا صالحًا تلقائيًا.\n\n**المصدر:** [قاموس diamonds ووحداته ونطاقاته](https://ggplot2.tidyverse.org/reference/diamonds.html).\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"diamonds\"))\n```\n\n## Download\n\n- [Download diamonds.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/diamonds.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 2772143,
+    "sha256": "9574730b03aba241d899c4a97511c5061b19358fab89510774fb6c24168345c4",
+    "columns": [
+      "carat",
+      "cut",
+      "color",
+      "clarity",
+      "depth",
+      "table",
+      "price",
+      "x",
+      "y",
+      "z"
+    ],
+    "rowCount": 53940,
+    "preview": [
+      [
+        "0.23",
+        "Ideal",
+        "E",
+        "SI2",
+        "61.5",
+        "55",
+        "326",
+        "3.95",
+        "3.98",
+        "2.43"
+      ],
+      [
+        "0.21",
+        "Premium",
+        "E",
+        "SI1",
+        "59.8",
+        "61",
+        "326",
+        "3.89",
+        "3.84",
+        "2.31"
+      ],
+      [
+        "0.23",
+        "Good",
+        "E",
+        "VS1",
+        "56.9",
+        "65",
+        "327",
+        "4.05",
+        "4.07",
+        "2.31"
+      ],
+      [
+        "0.7",
+        "Very Good",
+        "D",
+        "SI1",
+        "62.8",
+        "60",
+        "2757",
+        "5.66",
+        "5.68",
+        "3.56"
+      ],
+      [
+        "0.86",
+        "Premium",
+        "H",
+        "SI2",
+        "61",
+        "58",
+        "2757",
+        "6.15",
+        "6.12",
+        "3.74"
+      ],
+      [
+        "0.75",
+        "Ideal",
+        "D",
+        "SI2",
+        "62.2",
+        "55",
+        "2757",
+        "5.83",
+        "5.87",
+        "3.64"
+      ]
+    ]
+  },
+  "electricity-mix-2024": {
+    "name": "electricity-mix-2024",
+    "file": "electricity-mix-2024.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/electricity-mix-2024.csv",
+    "legacyPath": "/data/electricity-mix-2024.csv",
+    "title": "بيانات مزيج الكهرباء Our World in Data",
+    "repositoryPath": "data/electricity-mix-2024/electricity-mix-2024.csv",
+    "readmePath": "data/electricity-mix-2024/README.md",
+    "readme": "# بيانات مزيج الكهرباء Our World in Data\n\n\n\n**الوصف:** مقارنة مساهمة مصادر الطاقة في توليد الكهرباء، لا في مجمل استهلاك الطاقة.\n\n**وحدة البيانات والحجم:** دولة أو إقليم في 2024 ؛ 191 صفًا و 6 أعمدة في مستخلص الدورة.\n\n**التفاصيل:**\n\n- مستخلص تعليمي لعام 2024 ، يجمع مؤشرات الكهرباء من Our World in Data مع رموز القارات من [Country Codes](https://github.com/datasets/country-codes). توثّق [ملاحظات إعداد الملف](./electricity-mix-2024.sources.md) مصادره وخطوات اختياره.\n- في `country`: الدولة أو الإقليم.\n- في `continent`: رمز القارة.\n- في `solar_pct` و`wind_pct` و`hydro_pct` و`renewables_pct`: نسب توليد الكهرباء من الشمس والرياح والمياه وجميع المتجددة.\n- يجمع OWID مؤشرات من Ember وEnergy Institute. ويجمع Ember بدوره إحصاءات دولية ووطنية.\n- ليست قياسات أخذها مؤلف الدورة مباشرة من محطات الكهرباء.\n- اختيار 2024 ورموز ISO ذات ثلاثة أحرف، واستبعاد التجمعات الإقليمية والصفوف التي ينقصها أحد المؤشرات الأربعة، ثم إلحاق القارة وإعادة تسمية الأعمدة.\n- النسب من إجمالي الكهرباء المولّدة محليًا.\n- المتجددة تشمل مصادر إضافية غير الشمس والرياح والمياه. `NA` رمز أمريكا الشمالية.\n- متوسط الدول غير الموزون ليس حصة القارة من التوليد.\n\n**المصدر:** [قاموس مؤشرات OWID](https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-codebook.csv)، و[مصادر Ember ومنهجيته](https://ember-energy.org/data/yearly-electricity-data/)، و[إعداد نسخة الدورة](./electricity-mix-2024.sources.md).\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"electricity-mix-2024\"))\n```\n\n## Download\n\n- [Download electricity-mix-2024.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/electricity-mix-2024.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 7530,
+    "sha256": "1b4dfa1b964e3a6f88ee9354cb0282a3b1b8c19bbfde69b24248b487f8ec1222",
+    "columns": [
+      "country",
+      "continent",
+      "solar_pct",
+      "wind_pct",
+      "hydro_pct",
+      "renewables_pct"
+    ],
+    "rowCount": 191,
+    "preview": [
+      [
+        "Afghanistan",
+        "AS",
+        "11.111",
+        "0.000",
+        "75.758",
+        "86.869"
+      ],
+      [
+        "Albania",
+        "EU",
+        "4.077",
+        "0.000",
+        "95.923",
+        "100.000"
+      ],
+      [
+        "Algeria",
+        "AF",
+        "1.027",
+        "0.021",
+        "0.021",
+        "1.069"
+      ],
+      [
+        "Yemen",
+        "AS",
+        "11.238",
+        "0.000",
+        "0.000",
+        "11.238"
+      ],
+      [
+        "Zambia",
+        "AF",
+        "0.862",
+        "0.000",
+        "86.207",
+        "87.475"
+      ],
+      [
+        "Zimbabwe",
+        "AF",
+        "0.390",
+        "0.000",
+        "55.556",
+        "57.115"
+      ]
+    ]
+  },
+  "euro-2012": {
+    "name": "euro-2012",
+    "file": "Euro_2012_stats_TEAM.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/exercises/03/02_filtering_and_sorting/Euro_2012_stats_TEAM.csv",
+    "legacyPath": "/notebook/exercises/03/02_filtering_and_sorting/Euro_2012_stats_TEAM.csv",
+    "title": "بيانات بطولة أوروبا Euro 2012",
+    "repositoryPath": "data/euro-2012/Euro_2012_stats_TEAM.csv",
+    "readmePath": "data/euro-2012/README.md",
+    "readme": "# بيانات بطولة أوروبا Euro 2012\n\n\n\n**الوصف:** إحصاءات مجمّعة لأداء الفرق في Euro2012 ؛ الصف يصف فريقًا على مستوى البطولة، لا مباراة أو لاعبًا.\n\n**وحدة البيانات والحجم:** فريق؛ 16 صفًا و 35 عمودًا في نسخة الدورة.\n\n**التفاصيل:**\n\n- تتوفر نسخة الملف في مستودع تمارين pandas، دون بطاقة وصف للمجموعة أو إسناد موثّق إلى ناشر الإحصاءات الأصلي.\n- الأهداف والتسديدات ودقتها، ضرب القائم، أهداف الجزاء والرأس.\n- منها `Goals` و`Shots on target` و`Shooting Accuracy`.\n- التمريرات والمكتملة ودقتها، اللمسات والعرضيات والمراوغات والركنيات، الافتكاك والإبعاد والاعتراض والتصديات والأهداف المستقبلة.\n- الأخطاء والتسلل والبطاقات الصفراء والحمراء والتبديلات وعدد اللاعبين المستخدمين.\n- اسم الملف يحدد البطولة والسنة.\n- نسخة المستودع لا توثّق مزوّد الأحداث، أو قواعد ترميز كل إحصاء، أو مواعيد تسجيله. هذه المعلومات غير متحققة لهذا الملف.\n\n**المصدر:** [ملف تمارين pandas](https://github.com/guipsamora/pandas_exercises/blob/master/02_Filtering_%26_Sorting/Euro12/Euro_2012_stats_TEAM.csv). أسماء المتغيرات والحجم مأخوذة من ملف الدورة نفسه.\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"euro-2012\"))\n```\n\n## Download\n\n- [Download Euro_2012_stats_TEAM.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/Euro_2012_stats_TEAM.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 2319,
+    "sha256": "525fdc291f2097b375d4214afb6d3be90aad80abe94bd81108a10e8057ff10fe",
+    "columns": [
+      "Team",
+      "Goals",
+      "Shots on target",
+      "Shots off target",
+      "Shooting Accuracy",
+      "% Goals-to-shots",
+      "Total shots (inc. Blocked)",
+      "Hit Woodwork",
+      "Penalty goals",
+      "Penalties not scored",
+      "Headed goals",
+      "Passes",
+      "Passes completed",
+      "Passing Accuracy",
+      "Touches",
+      "Crosses",
+      "Dribbles",
+      "Corners Taken",
+      "Tackles",
+      "Clearances",
+      "Interceptions",
+      "Clearances off line",
+      "Clean Sheets",
+      "Blocks",
+      "Goals conceded",
+      "Saves made",
+      "Saves-to-shots ratio",
+      "Fouls Won",
+      "Fouls Conceded",
+      "Offsides",
+      "Yellow Cards",
+      "Red Cards",
+      "Subs on",
+      "Subs off",
+      "Players Used"
+    ],
+    "rowCount": 16,
+    "preview": [
+      [
+        "Croatia",
+        "4",
+        "13",
+        "12",
+        "51.9%",
+        "16.0%",
+        "32",
+        "0",
+        "0",
+        "0",
+        "2",
+        "1076",
+        "828",
+        "76.9%",
+        "1706",
+        "60",
+        "42",
+        "14",
+        "49",
+        "83",
+        "56",
+        "",
+        "0",
+        "10",
+        "3",
+        "13",
+        "81.3%",
+        "41",
+        "62",
+        "2",
+        "9",
+        "0",
+        "9",
+        "9",
+        "16"
+      ],
+      [
+        "Czech Republic",
+        "4",
+        "13",
+        "18",
+        "41.9%",
+        "12.9%",
+        "39",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1565",
+        "1223",
+        "78.1%",
+        "2358",
+        "46",
+        "68",
+        "21",
+        "62",
+        "98",
+        "37",
+        "2",
+        "1",
+        "10",
+        "6",
+        "9",
+        "60.1%",
+        "53",
+        "73",
+        "8",
+        "7",
+        "0",
+        "11",
+        "11",
+        "19"
+      ],
+      [
+        "Denmark",
+        "4",
+        "10",
+        "10",
+        "50.0%",
+        "20.0%",
+        "27",
+        "1",
+        "0",
+        "0",
+        "3",
+        "1298",
+        "1082",
+        "83.3%",
+        "1873",
+        "43",
+        "32",
+        "16",
+        "40",
+        "61",
+        "59",
+        "0",
+        "1",
+        "10",
+        "5",
+        "10",
+        "66.7%",
+        "25",
+        "38",
+        "8",
+        "4",
+        "0",
+        "7",
+        "7",
+        "15"
+      ],
+      [
+        "Spain",
+        "12",
+        "42",
+        "33",
+        "55.9%",
+        "16.0%",
+        "100",
+        "0",
+        "1",
+        "0",
+        "2",
+        "4317",
+        "3820",
+        "88.4%",
+        "5585",
+        "69",
+        "106",
+        "44",
+        "122",
+        "102",
+        "79",
+        "0",
+        "5",
+        "8",
+        "1",
+        "15",
+        "93.8%",
+        "102",
+        "83",
+        "19",
+        "11",
+        "0",
+        "17",
+        "17",
+        "18"
+      ],
+      [
+        "Sweden",
+        "5",
+        "17",
+        "19",
+        "47.2%",
+        "13.8%",
+        "39",
+        "3",
+        "0",
+        "0",
+        "1",
+        "1192",
+        "965",
+        "80.9%",
+        "1806",
+        "44",
+        "29",
+        "7",
+        "56",
+        "54",
+        "45",
+        "0",
+        "1",
+        "12",
+        "5",
+        "8",
+        "61.6%",
+        "35",
+        "51",
+        "7",
+        "7",
+        "0",
+        "9",
+        "9",
+        "18"
+      ],
+      [
+        "Ukraine",
+        "2",
+        "7",
+        "26",
+        "21.2%",
+        "6.0%",
+        "38",
+        "0",
+        "0",
+        "0",
+        "2",
+        "1276",
+        "1043",
+        "81.7%",
+        "1894",
+        "33",
+        "26",
+        "18",
+        "65",
+        "97",
+        "29",
+        "0",
+        "0",
+        "4",
+        "4",
+        "13",
+        "76.5%",
+        "48",
+        "31",
+        "4",
+        "5",
+        "0",
+        "9",
+        "9",
+        "18"
+      ]
+    ]
+  },
+  "hybrid": {
+    "name": "hybrid",
+    "file": "hybrid.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/hybrid.csv",
+    "legacyPath": "/data/hybrid.csv",
+    "title": "بيانات السيارات الهجينة Hybrid Cars",
+    "repositoryPath": "data/hybrid/hybrid.csv",
+    "readmePath": "data/hybrid/README.md",
+    "readme": "# بيانات السيارات الهجينة Hybrid Cars\n\n\n\n**الوصف:** دراسة العلاقات بين السعر وكفاءة الوقود والتسارع في السيارات الهجينة المبيعة في الولايات المتحدة.\n\n**وحدة البيانات والحجم:** سجل طراز وسنة؛ 153 صفًا و 6 أعمدة في الملف، وليس عدد وحدات السيارات المبيعة.\n\n**التفاصيل:**\n\n- يذكر كتاب Computational and Inferential Thinking أن البيانات مقتبسة من أرشيف الأستاذ Larry Winner في جامعة فلوريدا.\n- الولايات المتحدة، 1997–2013.\n- الأسعار معدّلة إلى دولارات 2013.\n- في `vehicle`: الطراز.\n- في `year`: سنة الصنع.\n- في `class`: فئة السيارة، مثل Compact وSUV.\n- في `msrp`: سعر التجزئة المقترح من المصنع.\n- في `acceleration`: معدل التسارع بوحدة كيلومتر/ساعة لكل ثانية.\n- في `mpg`: كفاءة الوقود بالميل لكل غالون.\n- الكتاب يذكر تكييف البيانات من أرشيف Larry Winner بجامعة فلوريدا، لكنه لا يعرض في هذا الفصل بروتوكول اختبار التسارع والوقود أو طريقة اختيار الطرازات.\n\n**المصدر:** [تعريف الأعمدة والوحدات في الكتاب](https://inferentialthinking.com/chapters/15/1/correlation/). عدد السجلات من ملف الدورة.\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"hybrid\"))\n```\n\n## Download\n\n- [Download hybrid.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/hybrid.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 6485,
+    "sha256": "faa15c22a0f039bf2a123a486c111eceab1852f826d5d9c989a61b0d0d9fc2fc",
+    "columns": [
+      "vehicle",
+      "year",
+      "msrp",
+      "acceleration",
+      "mpg",
+      "class"
+    ],
+    "rowCount": 153,
+    "preview": [
+      [
+        "Prius (1st Gen)",
+        "1997",
+        "24509.74",
+        "7.46",
+        "41.26",
+        "Compact"
+      ],
+      [
+        "Tino",
+        "2000",
+        "35354.97",
+        "8.2",
+        "54.1",
+        "Compact"
+      ],
+      [
+        "Prius (2nd Gen)",
+        "2000",
+        "26832.25",
+        "7.97",
+        "45.23",
+        "Compact"
+      ],
+      [
+        "C-Max Energi Plug-in",
+        "2013",
+        "32950.0",
+        "11.76",
+        "43.0",
+        "Midsize"
+      ],
+      [
+        "Fusion Energi Plug-in",
+        "2013",
+        "38700.0",
+        "11.76",
+        "43.0",
+        "Midsize"
+      ],
+      [
+        "Chevrolet Volt",
+        "2013",
+        "39145.0",
+        "11.11",
+        "37.0",
+        "Compact"
+      ]
+    ]
+  },
+  "iris": {
+    "name": "iris",
+    "file": "iris.csv",
+    "delimiter": ",",
+    "hasHeader": false,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/iris.csv",
+    "legacyPath": "/data/iris.csv",
+    "columns": [
+      "sepal_length",
+      "sepal_width",
+      "petal_length",
+      "petal_width",
+      "class"
+    ],
+    "title": "بيانات الزهور Iris",
+    "repositoryPath": "data/iris/iris.csv",
+    "readmePath": "data/iris/README.md",
+    "readme": "# بيانات الزهور Iris\n\n\n\n**الوصف:** تصنيف نباتات Iris من القياسات؛ مجموعة مرتبطة بعمل Fisher سنة 1936. سنة إيداعها لدى UCI، 1988 ، ليست سنة جمع القياسات.\n\n**وحدة البيانات والحجم:** عينة نبات؛ 150 سجلًا، 50 لكل نوع، وأربعة قياسات مع عمود التصنيف. الملف بلا صف أسماء للأعمدة؛ السطر الفارغ الأخير ليس ملاحظة.\n\n**التفاصيل:**\n\n- طول السبلة وعرضها، وطول البتلة وعرضها، جميعها بالسنتيمتر.\n- أسماء الدورة: `sepal_length` و`sepal_width` و`petal_length` و`petal_width`.\n- في `class`: ‏Iris-setosa أو Iris-versicolor أو Iris-virginica.\n- بطاقة UCI توثّق القياسات ووحداتها، لكنها لا تفصّل في البطاقة بروتوكول القياس الميداني أو موقع جمع كل عينة.\n- لا توجد قيم مفقودة حسب UCI.\n- وتنبّه البطاقة إلى اختلافات في عينتين بين البيانات المنشورة ومقال Fisher.\n\n**المصدر:** [بطاقة UCI وقاموس المتغيرات والتنبيه على العينات](https://archive.ics.uci.edu/dataset/53/iris).\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"iris\"), header=None, names=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'class'])\n```\n\n## Download\n\n- [Download iris.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/iris.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 4551,
+    "sha256": "6f608b71a7317216319b4d27b4d9bc84e6abd734eda7872b71a458569e2656c0",
+    "rowCount": 151,
+    "preview": [
+      [
+        "5.1",
+        "3.5",
+        "1.4",
+        "0.2",
+        "Iris-setosa"
+      ],
+      [
+        "4.9",
+        "3.0",
+        "1.4",
+        "0.2",
+        "Iris-setosa"
+      ],
+      [
+        "4.7",
+        "3.2",
+        "1.3",
+        "0.2",
+        "Iris-setosa"
+      ],
+      [
+        "6.2",
+        "3.4",
+        "5.4",
+        "2.3",
+        "Iris-virginica"
+      ],
+      [
+        "5.9",
+        "3.0",
+        "5.1",
+        "1.8",
+        "Iris-virginica"
+      ],
+      []
+    ]
+  },
+  "movielens-users": {
+    "name": "movielens-users",
+    "file": "users.csv",
+    "delimiter": "|",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/users.csv",
+    "legacyPath": "/data/users.csv",
+    "title": "بيانات المستخدمين MovieLens",
+    "repositoryPath": "data/movielens-users/users.csv",
+    "readmePath": "data/movielens-users/README.md",
+    "readme": "# بيانات المستخدمين MovieLens\n\n\n\n**الوصف:** مجموعة بحثية لأنظمة توصية الأفلام؛ بيانات المستخدمين جزء من MovieLens 100K الذي يضم 100,000 تقييم لـ 1,682 فيلمًا.\n\n**وحدة البيانات والحجم:** مستخدم؛ 943 صفًا و 5 أعمدة في ملف الدورة. لا يحتوي هذا الملف تقييمات الأفلام نفسها.\n\n**التفاصيل:**\n\n- يستخدم الملف بيانات المستخدمين `u.user` من MovieLens 100K، مع رأس للأعمدة وفاصل `|`؛ الوصف من توثيق GroupLens في جامعة مينيسوتا.\n- جُمعت المجموعة عبر موقع MovieLens من 19 سبتمبر 1997 إلى 22 أبريل 1998.\n- في `user_id`: معرّف المستخدم.\n- في `age`: العمر.\n- في `gender`: الجنس.\n- في `occupation`: المهنة.\n- في `zip_code`: الرمز البريدي، وينبغي الاحتفاظ به نصًا لحماية الأصفار البادئة.\n- جمعها مشروع GroupLens بجامعة مينيسوتا عبر الموقع.\n- استُبعد من له أقل من 20 تقييمًا أو معلومات ديموغرافية غير مكتملة. ليست عينة عشوائية من عموم السكان.\n- يوجد رمز بريدي، لكن README لا يحدّد إطار معاينة جغرافيًا نعتبره بلد إقامة لكل مستخدم.\n\n**المصدر:** [README الأصلي، شروط الاختيار ووصف الملفات](https://files.grouplens.org/datasets/movielens/ml-100k/README).\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"movielens-users\"), sep='|')\n```\n\n## Download\n\n- [Download users.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/users.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 22667,
+    "sha256": "3f808af219d91913c73fea08e4cceb693bb229afd86f4a672e98885440d1f0b0",
+    "columns": [
+      "user_id",
+      "age",
+      "gender",
+      "occupation",
+      "zip_code"
+    ],
+    "rowCount": 943,
+    "preview": [
+      [
+        "1",
+        "24",
+        "M",
+        "technician",
+        "85711"
+      ],
+      [
+        "2",
+        "53",
+        "F",
+        "other",
+        "94043"
+      ],
+      [
+        "3",
+        "23",
+        "M",
+        "writer",
+        "32067"
+      ],
+      [
+        "941",
+        "20",
+        "M",
+        "student",
+        "97229"
+      ],
+      [
+        "942",
+        "48",
+        "F",
+        "librarian",
+        "78209"
+      ],
+      [
+        "943",
+        "22",
+        "M",
+        "student",
+        "77841"
+      ]
+    ]
+  },
+  "penguins": {
+    "name": "penguins",
+    "file": "penguins.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/penguins.csv",
+    "legacyPath": "/data/penguins.csv",
+    "title": "بيانات البطاريق Palmer Penguins",
+    "repositoryPath": "data/penguins/penguins.csv",
+    "readmePath": "data/penguins/README.md",
+    "readme": "# بيانات البطاريق Palmer Penguins\n\n\n\n**الوصف:** قياسات أنواع البطاريق وأحجامها في أرخبيل Palmer بالقارة القطبية الجنوبية.\n\n**وحدة البيانات والحجم:** بطريق بالغ؛ 344 صفًا و 7 أعمدة في ملف الدورة، مع قياسات مفقودة في بعض الصفوف.\n\n**التفاصيل:**\n\n- درست أبحاث Kristen Gorman وفريق Palmer LTER اختلاف الحجم والغذاء بين الجنسين والأنواع. اختيرت أعشاش قبل وضع البيض، وقيس البالغان عند بلوغ العش مرحلة البيضة الواحدة. استُخدمت القدمة لقياس المنقار، والمسطرة للزعنفة، وموازين زنبركية للكتلة؛ وحدّد الجنس بتحليل جزيئي لعينات الدم. [الدراسة الأصلية وطرائقها](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0090081).\n- سنوات الدراسة المسجلة في الحزمة: 2007–2009.\n- جزر Biscoe وDream وTorgersen في أرخبيل Palmer، القارة القطبية الجنوبية.\n- في `species`: النوع، Adelie أو Chinstrap أو Gentoo.\n- في `island`: الجزيرة.\n- في `sex`: الجنس.\n- في `bill_length_mm` و`bill_depth_mm`: طول المنقار وعمقه بالملليمتر.\n- في `flipper_length_mm`: طول الزعنفة بالملليمتر.\n- في `body_mass_g`: الكتلة بالغرام.\n- حزمة palmerpenguins تضم أيضًا عمود `year`.\n- ملف الدورة، المنقول عبر seaborn، لا يتضمنه. القياسات مأخوذة في موسم التكاثر، فلا تمثّل الكتلة في كل فصول السنة.\n\n**المصدر:** [توثيق مجموعة Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/reference/penguins.html)، و[الدراسة الأصلية وطرائقها](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0090081).\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"penguins\"))\n```\n\n## Download\n\n- [Download penguins.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/penguins.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 13478,
+    "sha256": "e07636bd8af74260099ea2f8678e2eabbf35def579940cc76f67061ee16c06c1",
+    "columns": [
+      "species",
+      "island",
+      "bill_length_mm",
+      "bill_depth_mm",
+      "flipper_length_mm",
+      "body_mass_g",
+      "sex"
+    ],
+    "rowCount": 344,
+    "preview": [
+      [
+        "Adelie",
+        "Torgersen",
+        "39.1",
+        "18.7",
+        "181",
+        "3750",
+        "MALE"
+      ],
+      [
+        "Adelie",
+        "Torgersen",
+        "39.5",
+        "17.4",
+        "186",
+        "3800",
+        "FEMALE"
+      ],
+      [
+        "Adelie",
+        "Torgersen",
+        "40.3",
+        "18",
+        "195",
+        "3250",
+        "FEMALE"
+      ],
+      [
+        "Gentoo",
+        "Biscoe",
+        "50.4",
+        "15.7",
+        "222",
+        "5750",
+        "MALE"
+      ],
+      [
+        "Gentoo",
+        "Biscoe",
+        "45.2",
+        "14.8",
+        "212",
+        "5200",
+        "FEMALE"
+      ],
+      [
+        "Gentoo",
+        "Biscoe",
+        "49.9",
+        "16.1",
+        "213",
+        "5400",
+        "MALE"
+      ]
+    ]
+  },
+  "socr-height-weight/original": {
+    "name": "socr-height-weight/original",
+    "file": "SOCR-HeightWeight.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/SOCR-HeightWeight.csv",
+    "legacyPath": "/data/SOCR-HeightWeight.csv",
+    "title": "بيانات الطول والوزن SOCR",
+    "repositoryPath": "data/socr-height-weight/SOCR-HeightWeight.csv",
+    "readmePath": "data/socr-height-weight/README.md",
+    "readme": "# بيانات الطول والوزن SOCR\n\n\n\n**الوصف:** بيانات تعليمية مولّدة لمحاكاة العلاقة بين الطول والوزن عند عمر 18 سنة؛ ليست 25,000 قياس ميداني مباشر.\n\n**وحدة البيانات والحجم:** سجل محاكاة؛ 25,000 صف في كل نسخة؛ الأصل 3 أعمدة، والمعدّل 5 أعمدة.\n\n**التفاصيل:**\n\n- يصف SOCR البيانات بأنها مولّدة بالمحاكاة. الملف الذي ينتهي اسمه بـ `_modified` نسخة معدّلة داخل مواد الدورة.\n- يذكر SOCR أن المحاكاة مبنية على مسح نمو بهونغ كونغ سنة 1993 شمل أطفالًا من الميلاد حتى 18 سنة، جُنّدوا عبر مراكز صحة الأم والطفل والمدارس.\n- في `Index`: رقم السجل.\n- في `Height(Inches)`: الطول بالبوصة.\n- في `Weight(Pounds)`: الوزن بالرطل.\n- في `Height(m)` و`Weight(kg)`: الطول بالمتر والوزن بالكيلوغرام.\n- في `BMI`: مؤشر كتلة الجسم.\n- في `classification`: فئة مشتقة. هذه الإضافات تخص النسخة المعدّلة، ولا تصف قياسات جمعها SOCR مستقلة.\n- هونغ كونغ و 1993 يخصان المسح الذي استندت إليه المحاكاة.\n- لا توجد تواريخ أو أماكن رصد مستقلة لسجلات المحاكاة.\n\n**المصدر:** [شرح SOCR لأصل المحاكاة ووحدات القياس](https://wiki.socr.umich.edu/index.php/SOCR_Data_Dinov_020108_HeightsWeights). الأعمدة الإضافية متحقق منها في ملف الدورة المعدّل.\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"socr-height-weight/original\"))\ndata = pd.read_csv(academy.get_data_url(\"socr-height-weight/modified\"))\n```\n\n## Download\n\n- [Download SOCR-HeightWeight.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/SOCR-HeightWeight.csv)\n- [Download SOCR-HeightWeight_modified.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/SOCR-HeightWeight_modified.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 608346,
+    "sha256": "6278701705ac772b3a079d8d2e481354901e68a9c4cae05045cf7542b7316725",
+    "columns": [
+      "Index",
+      "Height(Inches)",
+      "Weight(Pounds)"
+    ],
+    "rowCount": 25000,
+    "preview": [
+      [
+        "1",
+        "65.78331",
+        "112.9925"
+      ],
+      [
+        "2",
+        "71.51521",
+        "136.4873"
+      ],
+      [
+        "3",
+        "69.39874",
+        "153.0269"
+      ],
+      [
+        "24998",
+        "64.69855",
+        "118.2655"
+      ],
+      [
+        "24999",
+        "67.52918",
+        "132.2682"
+      ],
+      [
+        "25000",
+        "68.87761",
+        "124.8742"
+      ]
+    ]
+  },
+  "socr-height-weight/modified": {
+    "name": "socr-height-weight/modified",
+    "file": "SOCR-HeightWeight_modified.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/SOCR-HeightWeight_modified.csv",
+    "legacyPath": "/data/SOCR-HeightWeight_modified.csv",
+    "title": "بيانات الطول والوزن SOCR",
+    "repositoryPath": "data/socr-height-weight/SOCR-HeightWeight_modified.csv",
+    "readmePath": "data/socr-height-weight/README.md",
+    "readme": "# بيانات الطول والوزن SOCR\n\n\n\n**الوصف:** بيانات تعليمية مولّدة لمحاكاة العلاقة بين الطول والوزن عند عمر 18 سنة؛ ليست 25,000 قياس ميداني مباشر.\n\n**وحدة البيانات والحجم:** سجل محاكاة؛ 25,000 صف في كل نسخة؛ الأصل 3 أعمدة، والمعدّل 5 أعمدة.\n\n**التفاصيل:**\n\n- يصف SOCR البيانات بأنها مولّدة بالمحاكاة. الملف الذي ينتهي اسمه بـ `_modified` نسخة معدّلة داخل مواد الدورة.\n- يذكر SOCR أن المحاكاة مبنية على مسح نمو بهونغ كونغ سنة 1993 شمل أطفالًا من الميلاد حتى 18 سنة، جُنّدوا عبر مراكز صحة الأم والطفل والمدارس.\n- في `Index`: رقم السجل.\n- في `Height(Inches)`: الطول بالبوصة.\n- في `Weight(Pounds)`: الوزن بالرطل.\n- في `Height(m)` و`Weight(kg)`: الطول بالمتر والوزن بالكيلوغرام.\n- في `BMI`: مؤشر كتلة الجسم.\n- في `classification`: فئة مشتقة. هذه الإضافات تخص النسخة المعدّلة، ولا تصف قياسات جمعها SOCR مستقلة.\n- هونغ كونغ و 1993 يخصان المسح الذي استندت إليه المحاكاة.\n- لا توجد تواريخ أو أماكن رصد مستقلة لسجلات المحاكاة.\n\n**المصدر:** [شرح SOCR لأصل المحاكاة ووحدات القياس](https://wiki.socr.umich.edu/index.php/SOCR_Data_Dinov_020108_HeightsWeights). الأعمدة الإضافية متحقق منها في ملف الدورة المعدّل.\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"socr-height-weight/original\"))\ndata = pd.read_csv(academy.get_data_url(\"socr-height-weight/modified\"))\n```\n\n## Download\n\n- [Download SOCR-HeightWeight.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/SOCR-HeightWeight.csv)\n- [Download SOCR-HeightWeight_modified.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/SOCR-HeightWeight_modified.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 1597212,
+    "sha256": "78d03c0fe714d49c3ec6be48bc3259393fcbce012197a363b935f929b4bca199",
+    "columns": [
+      "Index",
+      "Height(m)",
+      "Weight(kg)",
+      "BMI",
+      "classification"
+    ],
+    "rowCount": 25000,
+    "preview": [
+      [
+        "1",
+        "1.6708960739999998",
+        "51.252494060000004",
+        "18.35760947545468",
+        "Mild Thinness"
+      ],
+      [
+        "2",
+        "1.816486334",
+        "61.9095473816",
+        "18.762614655207983",
+        "Normal"
+      ],
+      [
+        "3",
+        "1.762727996",
+        "69.41177762480001",
+        "22.33894004444481",
+        "Normal"
+      ],
+      [
+        "24998",
+        "1.6433431699999999",
+        "53.644284676",
+        "19.864010231000925",
+        "Normal"
+      ],
+      [
+        "24999",
+        "1.7152411719999998",
+        "59.995797374400006",
+        "20.39249873991284",
+        "Normal"
+      ],
+      [
+        "25000",
+        "1.749491294",
+        "56.6419381264",
+        "18.506084206895103",
+        "Normal"
+      ]
+    ]
+  },
+  "tips": {
+    "name": "tips",
+    "file": "tips.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/tips.csv",
+    "legacyPath": "/data/tips.csv",
+    "title": "بيانات Tips",
+    "repositoryPath": "data/tips/tips.csv",
+    "readmePath": "data/tips/README.md",
+    "readme": "# بيانات Tips\n\n\n\n**الوصف**: سجّل مدير مطعم بيانات الزبائن الذين خدمهم خلال شهرين ونصف.\n\n**وحدة البيانات والحجم:** فاتورة مجموعة زبائن مع الإكرامية؛ 244 صفًا و7 أعمدة.\n\n**التفاصيل:**\n\n- في `total_bill`: مبلغ الفاتورة للطعام والشراب، بالدولار الأمريكي.\n- في `tip`: مبلغ الإكرامية بالدولار الأمريكي.\n- في `sex`: جنس الزبون المسجّل، `Male` أو `Female`.\n- في `smoker`: حالة التدخين المسجّلة، `Yes` أو `No`.\n- في `day`: يوم الأسبوع.\n- في `time`: الوجبة، `Lunch` للغداء أو `Dinner` للعشاء.\n- في `size`: عدد أفراد مجموعة الزبائن.\n\n**المصدر:** Bryant, P. G. and Smith, M. (1995), *Practical Data Analysis: Case Studies in Business Statistics*. Homewood, IL: Richard D. Irwin Publishing. [نسخة CSV في مستودع بيانات Seaborn](https://github.com/mwaskom/seaborn-data/blob/master/tips.csv).\n\n\n\nتتوفر المجموعة أيضًا عبر [Seaborn](https://seaborn.pydata.org/generated/seaborn.load_dataset.html) باستخدام `sns.load_dataset(\"tips\")`.\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"tips\"))\n```\n\n## Download\n\n- [Download tips.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/tips.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 9729,
+    "sha256": "e54cc4d2ce1bff65d32ca60b3e4b802e06bde1d7e7caf6f796f6bf7370e863b0",
+    "columns": [
+      "total_bill",
+      "tip",
+      "sex",
+      "smoker",
+      "day",
+      "time",
+      "size"
+    ],
+    "rowCount": 244,
+    "preview": [
+      [
+        "16.99",
+        "1.01",
+        "Female",
+        "No",
+        "Sun",
+        "Dinner",
+        "2"
+      ],
+      [
+        "10.34",
+        "1.66",
+        "Male",
+        "No",
+        "Sun",
+        "Dinner",
+        "3"
+      ],
+      [
+        "21.01",
+        "3.5",
+        "Male",
+        "No",
+        "Sun",
+        "Dinner",
+        "3"
+      ],
+      [
+        "22.67",
+        "2",
+        "Male",
+        "Yes",
+        "Sat",
+        "Dinner",
+        "2"
+      ],
+      [
+        "17.82",
+        "1.75",
+        "Male",
+        "No",
+        "Sat",
+        "Dinner",
+        "2"
+      ],
+      [
+        "18.78",
+        "3",
+        "Female",
+        "No",
+        "Thur",
+        "Dinner",
+        "2"
+      ]
+    ]
+  },
+  "titanic": {
+    "name": "titanic",
+    "file": "titanic.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/titanic.csv",
+    "legacyPath": "/data/titanic.csv",
+    "title": "بيانات تيتانيك Titanic",
+    "repositoryPath": "data/titanic/titanic.csv",
+    "readmePath": "data/titanic/README.md",
+    "readme": "# بيانات تيتانيك Titanic\n\n\n\n**الوصف:** بيانات ركاب ونتائج نجاة، تُستخدم لدراسة علاقة خصائص الراكب بالنجاة في كارثة تيتانيك.\n\n**وحدة البيانات والحجم:** راكب؛ 891 صفًا و 12 عمودًا في ملف الدورة. العدد يخص هذا الملف، وليس جميع من كانوا على السفينة.\n\n**التفاصيل:**\n\n- مصدر الملف المحفوظ هو مستودع pandas؛ يشرح توثيقه الأعمدة، ويربط بملف البيانات نفسه.\n- رحلة تيتانيك سنة 1912.\n- يتضمن `Embarked` رمز ميناء الصعود، وليس موقع الراكب وقت الغرق.\n- في `Survived`: النجاة، 0 أو 1.\n- في `Pclass`: فئة التذكرة، 1 أو 2 أو 3.\n- في `PassengerId` و`Name`: معرّف الراكب واسمه.\n- في `Sex`: الجنس.\n- في `Age`: العمر بالسنوات.\n- في `SibSp`: عدد الإخوة أو الأزواج المرافقين.\n- في `Parch`: عدد الوالدين أو الأبناء المرافقين.\n- في `Ticket`: التذكرة.\n- في `Fare`: الأجرة.\n- في `Cabin`: المقصورة.\n- في `Embarked`: ميناء الصعود. توجد قيم مفقودة، ومنها العمر والمقصورة.\n- pandas يوزّع الملف ويوثّق الأعمدة، لكنه لا يشرح في هذه الصفحة كيفية إعادة بناء سجلات الركاب التاريخية. لا نستنتج منها بروتوكول جمع أولي.\n\n**المصدر:** [قاموس الأعمدة ونسخة pandas](https://pandas.pydata.org/docs/getting_started/intro_tutorials/02_read_write.html)، و[بطاقة مسابقة Titanic](https://www.kaggle.com/competitions/titanic/data).\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"titanic\"))\n```\n\n## Download\n\n- [Download titanic.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/titanic.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 60080,
+    "sha256": "cd888141e6a2ca5906114d0b6a63d8a3e14edb3326f7bdd56327d14646b68c36",
+    "columns": [
+      "PassengerId",
+      "Survived",
+      "Pclass",
+      "Name",
+      "Sex",
+      "Age",
+      "SibSp",
+      "Parch",
+      "Ticket",
+      "Fare",
+      "Cabin",
+      "Embarked"
+    ],
+    "rowCount": 891,
+    "preview": [
+      [
+        "1",
+        "0",
+        "3",
+        "Braund, Mr. Owen Harris",
+        "male",
+        "22",
+        "1",
+        "0",
+        "A/5 21171",
+        "7.25",
+        "",
+        "S"
+      ],
+      [
+        "2",
+        "1",
+        "1",
+        "Cumings, Mrs. John Bradley (Florence Briggs Thayer)",
+        "female",
+        "38",
+        "1",
+        "0",
+        "PC 17599",
+        "71.2833",
+        "C85",
+        "C"
+      ],
+      [
+        "3",
+        "1",
+        "3",
+        "Heikkinen, Miss Laina",
+        "female",
+        "26",
+        "0",
+        "0",
+        "STON/O2. 3101282",
+        "7.925",
+        "",
+        "S"
+      ],
+      [
+        "889",
+        "0",
+        "3",
+        "Johnston, Miss Catherine Helen \"Carrie\"",
+        "female",
+        "",
+        "1",
+        "2",
+        "W./C. 6607",
+        "23.45",
+        "",
+        "S"
+      ],
+      [
+        "890",
+        "1",
+        "1",
+        "Behr, Mr. Karl Howell",
+        "male",
+        "26",
+        "0",
+        "0",
+        "111369",
+        "30",
+        "C148",
+        "C"
+      ],
+      [
+        "891",
+        "0",
+        "3",
+        "Dooley, Mr. Patrick",
+        "male",
+        "32",
+        "0",
+        "0",
+        "370376",
+        "7.75",
+        "",
+        "Q"
+      ]
+    ]
+  },
+  "us-census": {
+    "name": "us-census",
+    "file": "nc-est2019-agesex-res.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/nc-est2019-agesex-res.csv",
+    "legacyPath": "/data/nc-est2019-agesex-res.csv",
+    "title": "بيانات السكان حسب العمر والجنس U.S. Census",
+    "repositoryPath": "data/us-census/nc-est2019-agesex-res.csv",
+    "readmePath": "data/us-census/README.md",
+    "readme": "# بيانات السكان حسب العمر والجنس U.S. Census\n\n\n\n**الوصف:** تقدير أعداد السكان المقيمين حسب العمر والجنس، ومتابعة تغيرها بين السنوات.\n\n**وحدة البيانات والحجم:** فئة عمر وجنس؛ 306 صفوف و 14 عمودًا. الصف ليس شخصًا؛ بعض الصفوف مجاميع تتداخل مع الصفوف التفصيلية.\n\n**التفاصيل:**\n\n- يتناول توثيق مكتب الإحصاء هذا الملف بعينه، للفترة من 1 أبريل 2010 إلى 1 يوليو 2019.\n- الولايات المتحدة.\n- تعداد وأساس تقدير في 1 أبريل 2010 ، وتقديرات في 1 يوليو لكل سنة من 2010 إلى 2019.\n- نشر الملف في أبريل 2020.\n- في `SEX`: الرمز 0 للمجموع، و 1 للذكور، و 2 للإناث.\n- في `AGE`: الأعمار 0–99 ، و 100 لفئة 100 سنة فأكثر، و 999 لمجموع الأعمار.\n- في `CENSUS2010POP`: تعداد 2010.\n- في `ESTIMATESBASE2010`: أساس التقديرات.\n- في `POPESTIMATE2010` إلى `POPESTIMATE2019`: التقدير السنوي.\n- تقديرات مكتب الإحصاء مبنية على تعداد 2010 ، مع تعديلات برنامج مراجعة نتائج التعداد.\n- ليست إعادة عدّ ميداني شامل كل سنة.\n\n**المصدر:** [تعريف حقول الملف](https://www2.census.gov/programs-surveys/popest/technical-documentation/file-layouts/2010-2019/nc-est2019-agesex-res.pdf)، و[منهجيات التقديرات السكانية](https://www.census.gov/programs-surveys/popest/technical-documentation/methodology.html).\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"us-census\"))\n```\n\n## Download\n\n- [Download nc-est2019-agesex-res.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/nc-est2019-agesex-res.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 30388,
+    "sha256": "1afe09d3aebd8b84905576302ebac473757d1bde83ae76348e43524bea340769",
+    "columns": [
+      "SEX",
+      "AGE",
+      "CENSUS2010POP",
+      "ESTIMATESBASE2010",
+      "POPESTIMATE2010",
+      "POPESTIMATE2011",
+      "POPESTIMATE2012",
+      "POPESTIMATE2013",
+      "POPESTIMATE2014",
+      "POPESTIMATE2015",
+      "POPESTIMATE2016",
+      "POPESTIMATE2017",
+      "POPESTIMATE2018",
+      "POPESTIMATE2019"
+    ],
+    "rowCount": 306,
+    "preview": [
+      [
+        "0",
+        "0",
+        "3944153",
+        "3944160",
+        "3951430",
+        "3963092",
+        "3926570",
+        "3931258",
+        "3954787",
+        "3983981",
+        "3954773",
+        "3893990",
+        "3815343",
+        "3783052"
+      ],
+      [
+        "0",
+        "1",
+        "3978070",
+        "3978090",
+        "3957730",
+        "3966225",
+        "3977549",
+        "3942698",
+        "3948891",
+        "3973133",
+        "4002903",
+        "3972711",
+        "3908830",
+        "3829599"
+      ],
+      [
+        "0",
+        "2",
+        "4096929",
+        "4096939",
+        "4090621",
+        "3970654",
+        "3978925",
+        "3991740",
+        "3958711",
+        "3966321",
+        "3991349",
+        "4020045",
+        "3987032",
+        "3922044"
+      ],
+      [
+        "2",
+        "99",
+        "26193",
+        "26214",
+        "26098",
+        "26995",
+        "29076",
+        "30672",
+        "32245",
+        "33560",
+        "34278",
+        "38489",
+        "39576",
+        "42528"
+      ],
+      [
+        "2",
+        "100",
+        "44202",
+        "44246",
+        "45080",
+        "47427",
+        "50040",
+        "52817",
+        "57108",
+        "60309",
+        "64381",
+        "67113",
+        "72153",
+        "76850"
+      ],
+      [
+        "2",
+        "999",
+        "156964212",
+        "156969328",
+        "157246908",
+        "158356816",
+        "159456593",
+        "160511789",
+        "161646584",
+        "162778769",
+        "163919526",
+        "164939619",
+        "165801767",
+        "166582199"
+      ]
+    ]
+  },
+  "us-states/abbreviations": {
+    "name": "us-states/abbreviations",
+    "file": "state-abbrevs.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/state-abbrevs.csv",
+    "legacyPath": "/data/state-abbrevs.csv",
+    "title": "بيانات الولايات US States Data",
+    "repositoryPath": "data/us-states/state-abbrevs.csv",
+    "readmePath": "data/us-states/README.md",
+    "readme": "# بيانات الولايات US States Data\n\n\n\n**الوصف:** جداول أعدها Jake VanderPlas لعرض الدمج وتنظيف البيانات؛ جمعها من مكتب الإحصاء الأمريكي وWikipedia.\n\n**وحدة البيانات والحجم:** السكان: 2,544 صفًا و 4 أعمدة؛ اختصارات الولايات: 51 صفًا وعمودان؛ المساحات: 52 صفًا وعمودان. تختلف تغطية الجداول، فلا نفترض تطابق مفاتيحها جميعًا.\n\n**التفاصيل:**\n\n- بيانات السكان في الملف تمتد من 1990 إلى 2013 ، وتشمل رموز ولايات ومناطق ومجموع الولايات المتحدة. ملف المساحة لا يحمل سنة قياس.\n- في `state/region`: رمز المنطقة.\n- في `ages`: جميع الأعمار `total` أو أقل من 18 سنة `under18`.\n- في `year`: السنة.\n- في `population`: عدد السكان.\n- في `state` و`abbreviation`: الاسم والاختصار.\n- في `area (sq. mi)`: المساحة بالميل المربع.\n- المستودع يذكر استخلاص البيانات من الموقعين، لكنه لا يسرد لكل قيمة إصدار المصدر وتاريخ استخلاصها. صفوف مجموع الأعمار وصفوف أقل من 18 ليست مجموعات منفصلة قابلة للجمع معًا.\n\n**المصدر:** [مستودع ناشر الجداول](https://github.com/jakevdp/data-USstates). الأعداد ونطاق السنوات من ملفات الدورة.\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"us-states/abbreviations\"))\ndata = pd.read_csv(academy.get_data_url(\"us-states/areas\"))\ndata = pd.read_csv(academy.get_data_url(\"us-states/population\"))\n```\n\n## Download\n\n- [Download state-abbrevs.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/state-abbrevs.csv)\n- [Download state-areas.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/state-areas.csv)\n- [Download state-population.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/state-population.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 872,
+    "sha256": "884b3a1974f45f941822b19b6b37552947e9a35ee149d8ce7f37bddf72cd8724",
+    "columns": [
+      "state",
+      "abbreviation"
+    ],
+    "rowCount": 51,
+    "preview": [
+      [
+        "Alabama",
+        "AL"
+      ],
+      [
+        "Alaska",
+        "AK"
+      ],
+      [
+        "Arizona",
+        "AZ"
+      ],
+      [
+        "West Virginia",
+        "WV"
+      ],
+      [
+        "Wisconsin",
+        "WI"
+      ],
+      [
+        "Wyoming",
+        "WY"
+      ]
+    ]
+  },
+  "us-states/areas": {
+    "name": "us-states/areas",
+    "file": "state-areas.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/state-areas.csv",
+    "legacyPath": "/data/state-areas.csv",
+    "title": "بيانات الولايات US States Data",
+    "repositoryPath": "data/us-states/state-areas.csv",
+    "readmePath": "data/us-states/README.md",
+    "readme": "# بيانات الولايات US States Data\n\n\n\n**الوصف:** جداول أعدها Jake VanderPlas لعرض الدمج وتنظيف البيانات؛ جمعها من مكتب الإحصاء الأمريكي وWikipedia.\n\n**وحدة البيانات والحجم:** السكان: 2,544 صفًا و 4 أعمدة؛ اختصارات الولايات: 51 صفًا وعمودان؛ المساحات: 52 صفًا وعمودان. تختلف تغطية الجداول، فلا نفترض تطابق مفاتيحها جميعًا.\n\n**التفاصيل:**\n\n- بيانات السكان في الملف تمتد من 1990 إلى 2013 ، وتشمل رموز ولايات ومناطق ومجموع الولايات المتحدة. ملف المساحة لا يحمل سنة قياس.\n- في `state/region`: رمز المنطقة.\n- في `ages`: جميع الأعمار `total` أو أقل من 18 سنة `under18`.\n- في `year`: السنة.\n- في `population`: عدد السكان.\n- في `state` و`abbreviation`: الاسم والاختصار.\n- في `area (sq. mi)`: المساحة بالميل المربع.\n- المستودع يذكر استخلاص البيانات من الموقعين، لكنه لا يسرد لكل قيمة إصدار المصدر وتاريخ استخلاصها. صفوف مجموع الأعمار وصفوف أقل من 18 ليست مجموعات منفصلة قابلة للجمع معًا.\n\n**المصدر:** [مستودع ناشر الجداول](https://github.com/jakevdp/data-USstates). الأعداد ونطاق السنوات من ملفات الدورة.\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"us-states/abbreviations\"))\ndata = pd.read_csv(academy.get_data_url(\"us-states/areas\"))\ndata = pd.read_csv(academy.get_data_url(\"us-states/population\"))\n```\n\n## Download\n\n- [Download state-abbrevs.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/state-abbrevs.csv)\n- [Download state-areas.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/state-areas.csv)\n- [Download state-population.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/state-population.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 835,
+    "sha256": "f571aeafd4e45c8788e5e90f1ba71716d5fbe2a53d6a97c8e50d4056160bd650",
+    "columns": [
+      "state",
+      "area (sq. mi)"
+    ],
+    "rowCount": 52,
+    "preview": [
+      [
+        "Alabama",
+        "52423"
+      ],
+      [
+        "Alaska",
+        "656425"
+      ],
+      [
+        "Arizona",
+        "114006"
+      ],
+      [
+        "Wyoming",
+        "97818"
+      ],
+      [
+        "District of Columbia",
+        "68"
+      ],
+      [
+        "Puerto Rico",
+        "3515"
+      ]
+    ]
+  },
+  "us-states/population": {
+    "name": "us-states/population",
+    "file": "state-population.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/state-population.csv",
+    "legacyPath": "/data/state-population.csv",
+    "title": "بيانات الولايات US States Data",
+    "repositoryPath": "data/us-states/state-population.csv",
+    "readmePath": "data/us-states/README.md",
+    "readme": "# بيانات الولايات US States Data\n\n\n\n**الوصف:** جداول أعدها Jake VanderPlas لعرض الدمج وتنظيف البيانات؛ جمعها من مكتب الإحصاء الأمريكي وWikipedia.\n\n**وحدة البيانات والحجم:** السكان: 2,544 صفًا و 4 أعمدة؛ اختصارات الولايات: 51 صفًا وعمودان؛ المساحات: 52 صفًا وعمودان. تختلف تغطية الجداول، فلا نفترض تطابق مفاتيحها جميعًا.\n\n**التفاصيل:**\n\n- بيانات السكان في الملف تمتد من 1990 إلى 2013 ، وتشمل رموز ولايات ومناطق ومجموع الولايات المتحدة. ملف المساحة لا يحمل سنة قياس.\n- في `state/region`: رمز المنطقة.\n- في `ages`: جميع الأعمار `total` أو أقل من 18 سنة `under18`.\n- في `year`: السنة.\n- في `population`: عدد السكان.\n- في `state` و`abbreviation`: الاسم والاختصار.\n- في `area (sq. mi)`: المساحة بالميل المربع.\n- المستودع يذكر استخلاص البيانات من الموقعين، لكنه لا يسرد لكل قيمة إصدار المصدر وتاريخ استخلاصها. صفوف مجموع الأعمار وصفوف أقل من 18 ليست مجموعات منفصلة قابلة للجمع معًا.\n\n**المصدر:** [مستودع ناشر الجداول](https://github.com/jakevdp/data-USstates). الأعداد ونطاق السنوات من ملفات الدورة.\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"us-states/abbreviations\"))\ndata = pd.read_csv(academy.get_data_url(\"us-states/areas\"))\ndata = pd.read_csv(academy.get_data_url(\"us-states/population\"))\n```\n\n## Download\n\n- [Download state-abbrevs.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/state-abbrevs.csv)\n- [Download state-areas.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/state-areas.csv)\n- [Download state-population.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/state-population.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 57935,
+    "sha256": "24f24c2b36cafc1836b309534f92dd44389977373544dc880c5f7b8cb369180a",
+    "columns": [
+      "state/region",
+      "ages",
+      "year",
+      "population"
+    ],
+    "rowCount": 2544,
+    "preview": [
+      [
+        "AL",
+        "under18",
+        "2012",
+        "1117489"
+      ],
+      [
+        "AL",
+        "total",
+        "2012",
+        "4817528"
+      ],
+      [
+        "AL",
+        "under18",
+        "2010",
+        "1130966"
+      ],
+      [
+        "USA",
+        "total",
+        "2011",
+        "311582564"
+      ],
+      [
+        "USA",
+        "under18",
+        "2012",
+        "73708179"
+      ],
+      [
+        "USA",
+        "total",
+        "2012",
+        "313873685"
+      ]
+    ]
+  },
+  "wpm": {
+    "name": "wpm",
+    "file": "wpm.csv",
+    "delimiter": ",",
+    "hasHeader": true,
+    "legacySource": "/notebooks/ds-202-data-analysis/data/wpm.csv",
+    "legacyPath": "/data/wpm.csv",
+    "title": "ملفات الأمثلة التعليمية",
+    "repositoryPath": "data/wpm/wpm.csv",
+    "readmePath": "data/wpm/README.md",
+    "readme": "# ملفات الأمثلة التعليمية\n\n\n\nليس للملفين التاليين مصدر خارجي موثّق في مواد الدورة، لذلك لا ننسب إليهما بطاقة بيانات خارجية. الأوصاف هنا من درس القراءة والكتابة نفسه.\n\n### جدول الأعداد ABC\n\n**الوصف:** مثال لتعلّم قراءة الأعداد والضرب والحفظ.\n\n**وحدة البيانات والحجم:** صف من الأعداد؛ صفّان وثلاثة أعمدة: `a` و`b` و`c`.\n\n**التفاصيل:**\n\n- الأعداد من 1 إلى 6 ، مفصولة بفواصل، مع رأس للأعمدة.\n- لا يوجد مجتمع رصد أو وحدات قياس أو فترة أو مكان موثّق.\n- لا نعامل الأعداد بوصفها نتائج دراسة خارجية.\n\n**المصدر:** [درس القراءة والكتابة](/learn/ds-201-statistical-analysis/02-pandas/01-pandas-io). مثال تعليمي من مواد الدورة، بلا مصدر خارجي موثّق.\n\n\n\n### سرعة الكتابة WPM\n\n**الوصف:** مثال يربط سرعة الكتابة بوجود الإضاءة.\n\n**وحدة البيانات والحجم:** قياس مسجّل؛ 26 صفًا وعمودان. لا يوجد معرّف يثبت أنه شخص مختلف في كل صف.\n\n**التفاصيل:**\n\n- في `wpm`: كلمات في الدقيقة.\n- في `light`: وجود الإضاءة، بقيمتي True وFalse.\n- لا يوجد في مواد الدورة بروتوكول اختبار أو توزيع عشوائي للإضاءة أو بيانات مشاركين أو تاريخ ومكان.\n- لا ننسب الملف إلى تجربة منشورة.\n\n**المصدر:** [درس القراءة والكتابة](/learn/ds-201-statistical-analysis/02-pandas/01-pandas-io). مثال تعليمي من مواد الدورة، بلا مصدر خارجي موثّق.\n\n## Usage\n\n```python\nimport academy\nimport pandas as pd\n\ndata = pd.read_csv(academy.get_data_url(\"wpm\"))\n```\n\n## Download\n\n- [Download wpm.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/wpm.csv)\n\n## Attribution and redistribution\n\nThe source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.",
+    "bytes": 230,
+    "sha256": "cb3eaeb5935d4e7253901ea874ab98fe61a2016dc95523a73a4d91376f03eb8a",
+    "columns": [
+      "wpm",
+      "light"
+    ],
+    "rowCount": 26,
+    "preview": [
+      [
+        "11",
+        "False"
+      ],
+      [
+        "15",
+        "False"
+      ],
+      [
+        "50",
+        "False"
+      ],
+      [
+        "42",
+        "True"
+      ],
+      [
+        "36",
+        "True"
+      ],
+      [
+        "40",
+        "True"
+      ]
+    ]
+  }
+}
