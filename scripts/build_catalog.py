@@ -23,7 +23,7 @@ for readme in sorted((ROOT / "data").glob("*/README.md")):
         if path.parent != readme.parent or not path.is_file():
             raise ValueError(f"Invalid dataset file: {path}")
         raw = path.read_bytes()
-        rows = list(csv.reader(io.StringIO(raw.decode("utf-8-sig"), newline=""), delimiter=file["delimiter"]))
+        rows = [row for row in csv.reader(io.StringIO(raw.decode("utf-8-sig"), newline=""), delimiter=file["delimiter"]) if row]
         columns = rows.pop(0) if file["hasHeader"] else file["columns"]
         catalog[name] = {
             **file,
