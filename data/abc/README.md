@@ -16,17 +16,14 @@
 }
 -->
 
-**الوصف:** مثال لتعلّم قراءة الأعداد والضرب والحفظ.
+**الوصف:** جدول أعداد أُنشئ في الصف للتدرّب على قراءة البيانات ومعالجتها وحفظها.
 
 **وحدة البيانات والحجم:** صف من الأعداد؛ صفّان وثلاثة أعمدة: `a` و`b` و`c`.
 
 **التفاصيل:**
 
-- الأعداد من 1 إلى 6 ، مفصولة بفواصل، مع رأس للأعمدة.
-- لا يوجد مجتمع رصد أو وحدات قياس أو فترة أو مكان موثّق.
-- لا نعامل الأعداد بوصفها نتائج دراسة خارجية.
-
-**المصدر:** درس القراءة والكتابة. مثال تعليمي من مواد الدورة، بلا مصدر خارجي موثّق.
+- يحتوي الجدول على الأعداد من 1 إلى 6، مفصولة بفواصل، مع سطر أول لأسماء الأعمدة.
+- هذه أعداد تعليمية أُنشئت في الصف، وليست قياسات لدراسة.
 
 ## Usage
 
@@ -40,7 +37,3 @@ data = pd.read_csv(academy.get_data_url("abc"))
 ## Download
 
 - [Download abc.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/abc.csv)
-
-## Attribution and redistribution
-
-The source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.
