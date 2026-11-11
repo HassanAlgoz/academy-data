@@ -16,18 +16,16 @@
 }
 -->
 
-**الوصف:** مثال يربط سرعة الكتابة بوجود الإضاءة.
+**الوصف:** بيانات جُمعت في الصف من اختبار سرعة الكتابة في حالتين: إطفاء الإضاءة وتشغيلها، لاستكشاف قدرة الطلاب على الكتابة دون النظر إلى لوحة المفاتيح.
 
-**وحدة البيانات والحجم:** قياس مسجّل؛ 26 صفًا وعمودان. لا يوجد معرّف يثبت أنه شخص مختلف في كل صف.
+**وحدة البيانات والحجم:** نتيجة اختبار لطالب واحد؛ 26 صفًا وعمودان. يمثّل كل صف طالبًا مختلفًا.
 
 **التفاصيل:**
 
-- في `wpm`: كلمات في الدقيقة.
-- في `light`: وجود الإضاءة، بقيمتي True وFalse.
-- لا يوجد في مواد الدورة بروتوكول اختبار أو توزيع عشوائي للإضاءة أو بيانات مشاركين أو تاريخ ومكان.
-- لا ننسب الملف إلى تجربة منشورة.
-
-**المصدر:** درس القراءة والكتابة. مثال تعليمي من مواد الدورة، بلا مصدر خارجي موثّق.
+- `wpm`: سرعة الكتابة بالكلمات في الدقيقة.
+- `light`: حالة الإضاءة أثناء الاختبار؛ `True` تعني أن الإضاءة مشغّلة، و`False` تعني أنها مطفأة.
+- أجرى الطلاب الاختبار تحت إحدى حالتي الإضاءة، بهدف استكشاف من يستطيع الكتابة دون النظر إلى لوحة المفاتيح.
+- لا تمثّل الصفوف قياسين متكرّرين للطالب نفسه؛ كل نتيجة تخصّ طالبًا مختلفًا.
 
 ## Usage
 
@@ -41,7 +39,3 @@ data = pd.read_csv(academy.get_data_url("wpm"))
 ## Download
 
 - [Download wpm.csv](https://github.com/HassanAlgoz/academy-data/releases/download/v1/wpm.csv)
-
-## Attribution and redistribution
-
-The source and adaptations are described above. Original datasets retain their upstream terms; inclusion here does not grant a new license over third-party data. No additional redistribution license is asserted where the original course materials did not document one.
